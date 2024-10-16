@@ -1,0 +1,1184 @@
+:root {
+    --general-color: #cc5bf2;
+    /* Purple as the main color */
+    --accent-color: #5ca4a9;
+    /* Accent color (Teal) */
+    --hover-color: #4b8d91;
+    /* Hover color for buttons */
+    --text-color-dark: #333;
+    /* Dark text color for readability */
+    --background-light: #f9f9f9;
+    /* Light background for contrast */
+}
+img {
+    pointer-events: none; /* Prevent any interaction, like clicks */
+    user-select: none; /* Prevent selecting or highlighting */
+    -webkit-user-drag: none; /* Prevent dragging in WebKit-based browsers */
+}
+
+/* General Styles */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+    width: 100%;
+    scroll-behavior: smooth;
+    /* Smooth scrolling between sections */
+    background-color: var(--background-light);
+    overflow-x: hidden;
+}
+
+
+/* General Header Styles */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 200;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between hamburger and logo text */
+}
+
+/* Sidebar Navigation */
+nav {
+    display: flex;
+    gap: 40px;
+    /* Space between navigation links */
+    align-items: center;
+}
+
+
+
+/* List styling for buttons */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    /* Display nav items inline */
+    gap: 40px;
+}
+
+/* Individual list items */
+nav ul li {
+    margin: 0;
+}
+
+/* Button-like styling for nav items */
+.nav-button {
+    padding: 10px 20px;
+    background-color: transparent;
+    background-color: var(--general-color);
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effects for nav items */
+.nav-button:hover {
+    text-decoration: none;
+    background-color: white;
+    color: var(--general-color);
+    box-shadow:
+        0 0 100px rgba(204, 91, 242, 1),
+        0 0 400px rgba(204, 91, 242, 0.5);
+    animation: neonPulse 1.5s ease-in-out infinite;
+
+}
+
+.hamburger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none;
+    /* Hide by default on larger screens */
+    flex-direction: column;
+    gap: 5px;
+    z-index: 250;
+    outline: none;
+    /* Remove default outline on focus */
+    transition: transform 0.3s ease-in-out;
+}
+
+.hamburger:focus {
+    outline: none;
+    /* Remove the black border on click */
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: var(--general-color);
+    border: 3px solid transparent;
+}
+
+.sidebar-footer {
+    display: none;
+}
+
+/* Section Styles */
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    color: var(--text-color-dark);
+}
+
+
+#home .text-content h1 {
+    font-size: 4rem;
+    /* Increase the size for emphasis */
+    color: #e96e8b;
+    /* Softer pink for harmony */
+    font-weight: bold;
+    padding-left: 20px;
+    /* Slight padding for balance */
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(255, 182, 193, 0.5)
+}
+
+.logo {
+    color: var(--general-color);
+    font-weight: bold;
+    margin: 0;
+    font-size: 1.3rem;
+    font-style: italic;
+    /* Add a subtle differentiation */
+    margin-top: 15px;
+    margin-bottom: 10px;
+    opacity: 0.9;
+    display: none; /* Hide by default */
+}
+
+#home #tagline {
+    font-size: 3rem;
+    /* Smaller than the headings */
+    color: #e567a5;
+    /* Darker pink for readability */
+    font-weight: 600;
+    /* Softer weight */
+    margin-top: 20px;
+    /* Space it from the subheading */
+    text-transform: uppercase;
+    /* Keep emphasis */
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    /* Add soft shadow */
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    overflow: hidden;
+    width: 0;
+    display: inline-block;
+    white-space: nowrap;
+    animation: typing 3s steps(50, end) forwards;
+}
+
+#home .text-content {
+    flex: 1;
+    text-align: left;
+    /* Align text to the left */
+    padding-left: 40px;
+    /* Space between the text and the image */
+    position: relative;
+    z-index: 1;
+    /* Make sure text is above background elements */
+}
+
+/* Home Section Styles with Image on Right and Circular Shape */
+#home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    /* Full screen height */
+    background-color: var(--background-light);
+    /* Light background color */
+    padding: 20px;
+    position: relative;
+
+}
+
+#home::before {
+    content: "";
+    /* Required for pseudo-elements */
+    position: absolute;
+    /* Position behind the content */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('./photos/smile_br.png');
+    background-color: rgba(255, 255, 255, 0.4);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    /* Send it to the back */
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.text-content {
+    flex: 1;
+    order: 1;
+    padding-right: 40px;
+    /* Space between the text and the image */
+    text-align: left;
+    /* Align text to the left */
+    display: inline-block;
+}
+
+.dentist-photo {
+    position: relative;
+    /* Ensure it is positioned above the background */
+    z-index: 1;
+    /* Bring the dentist's photo above the background */
+    max-width: 90%;
+    /* Adjust the size of the image */
+    height: auto;
+    border-radius: 50%;
+    /* Make the image circular */
+    object-fit: cover;
+    /* Ensures the image fits well inside the circular frame */
+    border: 0.5px solid rgba(204, 91, 242, 1);
+    box-shadow: 0 10px 20px rgba(204, 91, 242, 0.8);
+}
+
+.photo-container {
+    position: relative;
+    /* Establish positioning context for the teeth background */
+    flex: 1;
+    /* Allow this to take up equal space */
+    order: 2;
+    /* Ensure it's ordered correctly */
+    width: 100%;
+    height: 100%;
+
+}
+
+.teeth-background {
+    position: absolute;
+    /* Position it behind the dentist's photo */
+    top: 0;
+    /* Adjust this value to position it correctly */
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.teeth-background::before {
+    content: "";
+    position: absolute;
+    /* Position it behind the dentist's photo */
+    top: 0%;
+    /* Adjust these values for the desired positioning */
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+    max-width: 100%;
+    height: auto;
+    background-image: url('./photos/colorful.png');
+    /* Path to your colorful teeth image */
+    background-size: contain;
+    /* Ensure it covers the entire area */
+    background-position: center;
+    /* Center the image */
+    z-index: 0;
+    /* Send it to the back */
+    opacity: 0.9;
+    /* Adjust opacity to make it subtle */
+    border-radius: 80%;
+    /* Optional: make the background circular if desired */
+
+}
+
+
+
+/* Keyframes for fade-in effect */
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+.neon-circle {
+    position: absolute;
+    top: 50%;
+    /* Center vertically */
+    left: 50%;
+    /* Center horizontally */
+    width: 90%;
+    /* Increase width of the circle */
+    height: 90%;
+    /* Increase height of the circle */
+    border-radius: 50%;
+    /* Make it circular */
+    background: rgba(204, 91, 242, 0.5);
+    /* Purple color */
+    box-shadow:
+        0 0 100px rgba(204, 91, 242, 1),
+        0 0 400px rgba(204, 91, 242, 0.5);
+    /* Neon effect */
+    transform: translate(-50%, -50%);
+    /* Center the circle */
+    z-index: 0;
+    /* Position behind the photo */
+    pointer-events: none;
+    /* Prevent any interaction */
+    animation: neonPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes neonPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 30px rgba(204, 91, 242, 1), 0 0 60px rgba(204, 91, 242, 0.8);
+    }
+
+    50% {
+        box-shadow: 0 0 50px rgba(204, 91, 242, 1), 0 0 100px rgba(204, 91, 242, 1);
+    }
+}
+
+/* About Section ----------------------------------------------------------------------------------------------------- */
+/* About Section Full Background */
+#about {
+    background-color: white;
+    padding: 0px 10px;
+    /* Add padding to ensure space around the inner box for small screens */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    /* Make sure the section takes up the full viewport height */
+}
+
+/* About Section Inner Box */
+#about .about-content {
+
+    background-color: #f0f4f8;
+    /* Light box background */
+    color: #333;
+    /* Text color */
+    padding: 20px;
+    /* Padding for comfortable spacing */
+    border-radius: 12px;
+    /* Rounded corners */
+    max-width: 900px;
+    width: 100%;
+    /* Restrict width for better readability */
+    height: 100%;
+    margin: 20px auto;
+    /* Center the box */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+
+    /* Ensure it takes the full width of its container */
+
+
+}
+
+#about:hover .about-content {
+    transform: translateY(-10px);
+    /* Move the box on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    /* Deeper shadow on hover */
+}
+
+
+#about h2 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    /* Dark blue for the heading */
+    font-weight: 700;
+    /* Bold heading for emphasis */
+    margin-bottom: 15px;
+    position: relative;
+    text-align: center;
+}
+
+#about h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--general-color);
+    /* Accent color (green) for underlining */
+    margin: 10px auto 0;
+}
+
+#about h3 {
+    font-size: 1.2rem;
+    color: #34495e;
+    /* Slightly lighter for subheadings */
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+#about p {
+    font-size: 1rem;
+    line-height: 1.8;
+    /* Increased line-height for better readability */
+    color: #555;
+    /* Medium gray for a softer text color */
+    margin-bottom: 25px;
+
+}
+
+
+
+/* Services Section Styling ----------------------------------------------------------------------*/
+
+
+
+.services-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 60px 20px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: rgba(204, 91, 242, 0.6);
+
+}
+
+.service-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: auto;
+    /* Increased height */
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.service-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 30%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    /* Space between image and text */
+    border: 2px solid rgba(204, 91, 242, 0.4);
+    display: flex;
+}
+
+.service-content h2 {
+    font-size: 1.6rem;
+    font-family: 'Poppins', sans-serif;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.service-content p {
+    font-size: 1.1rem; /* Adjusted to be readable but compact */
+    font-family: 'Poppins', sans-serif;
+    color: #444; /* Darker gray for better legibility */
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* Services Section Styling end ----------------------------------------------------------------------*/
+
+/* gallery section styling  */
+
+#gallery {
+    background-color: #f0f4f8;
+}
+
+.gallery-heading {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 15px;
+    letter-spacing: 1.5px;
+}
+
+.gallery-heading::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background-color: var(--general-color);
+    border-radius: 2px;
+}
+
+/* Clipart Styling */
+.clipart-container {
+    text-align: center;
+    margin-bottom: 20px; /* Space between clipart and gallery */
+}
+
+.clipart-heading {
+    max-width: 250px; /* Adjust width as needed */
+    width: 100%; /* Make it responsive */
+    height: auto;
+}
+
+/* Slideshow Container */
+.slideshow-container {
+    position: relative;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Increase gap for better spacing */
+    padding-top: 50px;
+}
+
+/* Each Gallery Slide */
+.gallery-slide {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: opacity 1s ease-in-out;
+}
+
+.caption {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem; /* Increase the font size slightly */
+    color: #555;
+    margin-top: 15px;
+    background-color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(204, 91, 242, 1);
+    width: fit-content;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
+}
+
+/* Before and After Boxes */
+.before,
+.after {
+    flex: 1;
+    text-align: center;
+    padding: 0;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1), 0px 5px 15px rgba(204, 91, 242, 0.2);
+    margin: 0 10px;
+    width: 500px; /* Set a fixed width */
+    height: 350px; /* Set a fixed height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden; /* To contain any inner animations */
+}
+
+.before::after,
+.after::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(204, 91, 242, 0.5);
+    transform: translate(-50%, -50%) scale(1);
+    filter: blur(15px);
+    z-index: -1;
+    transition: opacity 0.4s ease-in-out;
+    opacity: 0; /* Hidden by default */
+}
+
+.before:hover,
+.after:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.2), 0px 10px 30px rgba(204, 91, 242, 0.4);
+}
+
+.before:hover::after,
+.after:hover::after {
+    opacity: 0.6; /* Show glow on hover */
+}
+
+.before img,
+.after img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover; /* This will make sure the images fill the box without stretching */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease-in-out; /* Smooth zoom effect */
+}
+
+.before:hover img,
+.after:hover img {
+    transform: scale(1.05); /* Slight zoom in on hover */
+}
+
+/* Caption Styling */
+.before p,
+.after p {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Slideshow Animation */
+@keyframes slide {
+    0%, 20%, 100% {
+        opacity: 0;
+    }
+    25%, 95% {
+        opacity: 1;
+    }
+}
+
+
+/* Contact Section Styles ------------------------------------------------------------------- */
+/* Contact Section */
+#contact {
+    text-align: center;
+    padding: 60px 20px;
+    position: relative;
+    z-index: 1;
+    background-color: white;
+    /* To ensure content is visible over the background */
+    overflow: hidden;
+    min-height: 100vh;
+    max-width: 100%
+        /* Prevent content overflow */
+}
+
+/* Dentist Background as a background image */
+#contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./photos/dentist_female.png');
+    /* Path to the dentist clipart */
+    background-size: contain;
+    /* Ensures it covers the full page */
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    /* Center the image */
+    opacity: 0.1;
+    /* Lower opacity for a subtle background effect */
+    z-index: -1;
+    /* Behind all other content */
+}
+
+/* Appointment title styling */
+.appointment-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 20px;
+}
+
+/* Appointment image styling */
+.appointment-img {
+    width: 50%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Contact section heading */
+#contact h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+/* Contact Info Styling */
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Contact Info individual items */
+.contact-info ul li {
+    display: inline-block;
+    margin: 0 15px;
+    text-align: center;
+}
+
+/* Remove underline from links */
+.contact-info a {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    color: black;
+    font-weight: bold;
+}
+
+/* Social Media Icons styling */
+.contact-info i {
+    font-size: 2.5rem;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effects for icons */
+.contact-info a:hover i {
+    transform: scale(1.2);
+    /* Slightly enlarge icon */
+}
+
+/* Social media platform-specific colors */
+
+/* Instagram */
+.contact-info a[href*="instagram"] i {
+    color: #e1306c;
+    /* Fallback color for non-WebKit browsers */
+    background: radial-gradient(circle at 30% 30%, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* For WebKit browsers */
+}
+
+.contact-info a:hover[href*="instagram"] i {
+    color: #e1306c;
+}
+
+.contact-info a:hover {
+    color: inherit;
+    /* Keep the text color */
+    text-decoration: none;
+}
+
+
+/* Facebook */
+.contact-info a[href*="facebook"] i {
+    color: #4267B2;
+}
+
+.contact-info a:hover[href*="facebook"] i {
+    color: #3b5998;
+}
+
+/* WhatsApp */
+.contact-info a[href*="wa.me"] i {
+    color: #25D366;
+}
+
+.contact-info a:hover[href*="wa.me"] i {
+    color: #128c7e;
+}
+
+/* Phone */
+.contact-info a[href*="tel"] i {
+    color: #000;
+}
+
+.contact-info a:hover[href*="tel"] i {
+    color: #555;
+}
+
+/* Email */
+.contact-info a[href*="mailto"] i {
+    color: #EA4335;
+}
+
+.contact-info a:hover[href*="mailto"] i {
+    color: #d93025;
+}
+
+/* Simple Modern Footer */
+footer {
+    background: linear-gradient(135deg, var(--general-color) 30%, #4267B2 100%);
+    color: white;
+    text-align: center;
+    padding: 10px 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+footer p {
+    font-size: 1.2rem;
+    opacity: 1;
+    margin: 0;
+}
+
+
+@media (max-width: 768px) {
+    #home {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 120px 15px 20px;
+        /* Adjust padding for better view */
+        height: auto;
+        width: 100%;
+        /* Ensure full width */
+    }
+
+    #home .content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        max-width: 100%;
+        /* Ensure no overflow */
+    }
+
+    #home .text-content {
+        order: 1;
+        padding: 0 10px;
+        /* Add padding for better view on sides */
+        text-align: center;
+        max-width: 90%;
+    }
+
+    #home .text-content h1 {
+        font-size: 2rem;
+        /* Reduce size for small screens */
+        line-height: 1.2;
+        margin: 0 0 10px;
+        word-break: break-word;
+    }
+
+    #home .text-content h2.logo {
+        font-size: 1.2rem;
+        /* Reduce size to fit screen */
+        margin: 8px 0;
+    }
+
+    #home #tagline {
+        font-size: 1.5rem;
+        /* Smaller font size */
+        margin-top: 8px;
+    }
+
+    #home .photo-container {
+        order: 2;
+        width: 100%;
+        margin-top: 20px;
+        max-width: 250px;
+        position: relative;
+    }
+
+    #home .dentist-photo {
+        width: 100%;
+        /* Full width */
+        max-width: 250px;
+        /* Limit image width */
+        height: auto;
+    }
+
+    .neon-circle {
+        width: 100%;
+        height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .hamburger {
+        display: flex;
+        z-index: 250;
+    }
+
+    nav {
+        position: absolute;
+        top: 100%;
+        left: -300px;
+        /* Initially hide off-screen */
+        height: 330px;
+        width: 150px;
+        background-color: #ffffff;
+        color: var(--general-color);
+        flex-direction: column;
+        align-items: center;
+        padding-top: 30px;
+        transition: left 0.5s ease-in-out;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        z-index: 150;
+    }
+
+    nav.open {
+        left: 0;
+        /* Slide in the sidebar when open */
+    }
+
+    nav ul {
+        flex-direction: column;
+        /* Stack nav items vertically */
+        gap: 20px;
+        z-index: 300;
+    }
+
+    .nav-button {
+        background-color: transparent;
+        color: var(--general-color);
+        font-weight: bold;
+        text-decoration: none;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .nav-button:hover {
+        background-color: var(--general-color);
+        color: white;
+    }
+
+    .hamburger.open .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.open .bar:nth-child(2) {
+        opacity: 0;
+        /* Hide the middle bar */
+    }
+
+    .hamburger.open .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .sidebar-footer {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+        padding: 10px 0;
+    }
+
+    .divider-line {
+        width: 80%;
+        height: 2px;
+        background-color: var(--general-color);
+        margin: 0 auto;
+        border: none;
+    }
+
+    .footer-message {
+        margin-top: 10px;
+        color: var(--general-color);
+        font-weight: bold;
+        font-size: 1rem;
+    }
+    #about {
+        padding: 15px 10px; /* Reduce padding for smaller screens */
+    }
+
+    #about .about-content {
+        padding: 5px 5px; /* Reduce padding inside the content */
+        max-width: 100%; /* Make sure content takes full width */
+    }
+
+    #about h2 {
+        font-size: 1.2rem; /* Smaller font size for better mobile fit */
+    }
+
+    #about h3 {
+        font-size: 1rem; /* Adjust font size for subheadings */
+    }
+
+    #about p {
+        font-size: 0.8rem; /* Smaller text size for better fitting */
+    }
+    .services-section {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 40px 15px;
+    }
+
+    .service-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: auto;
+        padding: 40px;
+    }
+
+    .service-photo {
+        width: 100px;
+        height: 100px;
+        margin-right: 15px;
+        border-radius: 20%;
+    }
+
+    .service-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .service-content h2 {
+        font-size: 1.2rem; /* Smaller heading size for compact display */
+        margin-bottom: 5px;
+        text-align: left;
+        color: #2c3e50;
+    }
+
+    .service-content p {
+        font-size: 0.95rem; /* Smaller paragraph size */
+        line-height: 1.4;
+        text-align: left;
+        margin: 0;
+        color: #444;
+    }
+    .gallery-slide {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .before,
+    .after {
+        width: 400px; /* Set a fixed width to keep the box size consistent */
+        max-width: 90%; /* Prevent it from exceeding the viewport width */
+        height: 220px; /* Set a fixed height as well for consistency */
+        margin-bottom: 20px; /* Space between the two boxes */
+        box-sizing: border-box; /* Ensures padding and border are included in the width and height */
+    }
+
+    .before img,
+    .after img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Make sure the image fills the container without distortion */
+        border-radius: 10px;
+    }
+
+    .contact-info ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0px;
+    }
+
+    .contact-info ul li {
+        margin: 0 0; /* Vertical spacing for each item */
+        width: 100%; /* Take full width on mobile */
+    }
+
+    .appointment-title {
+        font-size: 2rem;
+    }
+
+    .appointment-img {
+        width: 70%;
+        max-width: 200px;
+    }
+
+    #contact h2 {
+        font-size: 28px;
+    }
+    .logo {
+        display: block; /* Show on small screens */
+    }
+    header {
+        justify-content: space-between; /* Align hamburger and logo to the left, nav to the right */
+    }
+}
+
+@media (max-width: 1024px) {
+    .services-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .service-item {
+        height: auto;
+        padding: 20px;
+    }
+
+    .service-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .service-content p {
+        font-size: 1.1rem;
+    }
+    
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .contact-info ul {
+        flex-direction: row;
+        justify-content: center;
+        gap: 30px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+    .contact-info ul {
+        flex-direction: column;
+        justify-content: center;
+        gap: 0px;
+    }
+    .contact-info ul li {
+        margin: 0 0; /* Vertical spacing for each item */
+        width: 100%; /* Take full width on mobile */
+    }
+
+    .appointment-title {
+        font-size: 2rem;
+    }
+
+    .appointment-img {
+        width: 40%;
+        max-width: 150px;
+    }
+
+    #contact h2 {
+        font-size: 28px;
+    }
+}
+
+
