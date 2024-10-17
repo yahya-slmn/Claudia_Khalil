@@ -10,10 +10,14 @@
     --background-light: #f9f9f9;
     /* Light background for contrast */
 }
+
 img {
-    pointer-events: none; /* Prevent any interaction, like clicks */
-    user-select: none; /* Prevent selecting or highlighting */
-    -webkit-user-drag: none; /* Prevent dragging in WebKit-based browsers */
+    pointer-events: none;
+    /* Prevent any interaction, like clicks */
+    user-select: none;
+    /* Prevent selecting or highlighting */
+    -webkit-user-drag: none;
+    /* Prevent dragging in WebKit-based browsers */
 }
 
 /* General Styles */
@@ -45,10 +49,12 @@ header {
     background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 .header-content {
     display: flex;
     align-items: center;
-    gap: 15px; /* Space between hamburger and logo text */
+    gap: 15px;
+    /* Space between hamburger and logo text */
 }
 
 /* Sidebar Navigation */
@@ -132,7 +138,7 @@ nav ul li {
 
 /* Section Styles */
 section {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -164,7 +170,8 @@ section {
     margin-top: 15px;
     margin-bottom: 10px;
     opacity: 0.9;
-    display: none; /* Hide by default */
+    display: none;
+    /* Hide by default */
 }
 
 #home #tagline {
@@ -370,13 +377,14 @@ section {
 /* About Section ----------------------------------------------------------------------------------------------------- */
 /* About Section Full Background */
 #about {
-    background-color: white;
-    padding: 0px 10px;
+    background-color:  #f1ece7;
+    padding: 10px;
     /* Add padding to ensure space around the inner box for small screens */
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    min-height: auto;
+    box-sizing: border-box;
     /* Make sure the section takes up the full viewport height */
 }
 
@@ -394,7 +402,7 @@ section {
     max-width: 900px;
     width: 100%;
     /* Restrict width for better readability */
-    height: 100%;
+    height: auto;
     margin: 20px auto;
     /* Center the box */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
@@ -422,7 +430,6 @@ section {
     font-weight: 700;
     /* Bold heading for emphasis */
     margin-bottom: 15px;
-    position: relative;
     text-align: center;
 }
 
@@ -511,9 +518,11 @@ section {
 }
 
 .service-content p {
-    font-size: 1.1rem; /* Adjusted to be readable but compact */
+    font-size: 1.1rem;
+    /* Adjusted to be readable but compact */
     font-family: 'Poppins', sans-serif;
-    color: #444; /* Darker gray for better legibility */
+    color: #444;
+    /* Darker gray for better legibility */
     text-align: center;
     line-height: 1.6;
 }
@@ -552,12 +561,15 @@ section {
 /* Clipart Styling */
 .clipart-container {
     text-align: center;
-    margin-bottom: 20px; /* Space between clipart and gallery */
+    margin-bottom: 20px;
+    /* Space between clipart and gallery */
 }
 
 .clipart-heading {
-    max-width: 250px; /* Adjust width as needed */
-    width: 100%; /* Make it responsive */
+    max-width: 250px;
+    /* Adjust width as needed */
+    width: 100%;
+    /* Make it responsive */
     height: auto;
 }
 
@@ -571,10 +583,12 @@ section {
     flex-direction: column;
     align-items: center;
 }
+
 .gallery-container {
     display: flex;
     justify-content: center;
-    gap: 40px; /* Increase gap for better spacing */
+    gap: 40px;
+    /* Increase gap for better spacing */
     padding-top: 50px;
 }
 
@@ -589,20 +603,6 @@ section {
     transition: opacity 1s ease-in-out;
 }
 
-.caption {
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.1rem; /* Increase the font size slightly */
-    color: #555;
-    margin-top: 15px;
-    background-color: #ffffff;
-    padding: 5px 10px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 4px rgba(204, 91, 242, 1);
-    width: fit-content;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
-}
-
 /* Before and After Boxes */
 .before,
 .after {
@@ -613,14 +613,17 @@ section {
     border-radius: 15px;
     box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1), 0px 5px 15px rgba(204, 91, 242, 0.2);
     margin: 0 10px;
-    width: 500px; /* Set a fixed width */
-    height: 350px; /* Set a fixed height */
+    width: 500px;
+    /* Set a fixed width */
+    height: 350px;
+    /* Set a fixed height */
     display: flex;
     align-items: center;
     justify-content: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
-    overflow: hidden; /* To contain any inner animations */
+    overflow: hidden;
+    /* To contain any inner animations */
 }
 
 .before::after,
@@ -636,7 +639,8 @@ section {
     filter: blur(15px);
     z-index: -1;
     transition: opacity 0.4s ease-in-out;
-    opacity: 0; /* Hidden by default */
+    opacity: 0;
+    /* Hidden by default */
 }
 
 .before:hover,
@@ -647,7 +651,8 @@ section {
 
 .before:hover::after,
 .after:hover::after {
-    opacity: 0.6; /* Show glow on hover */
+    opacity: 0.6;
+    /* Show glow on hover */
 }
 
 .before img,
@@ -655,31 +660,30 @@ section {
     width: 100%;
     height: 100%;
     border-radius: 10px;
-    object-fit: cover; /* This will make sure the images fill the box without stretching */
+    object-fit: cover;
+    /* This will make sure the images fill the box without stretching */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.5s ease-in-out; /* Smooth zoom effect */
+    transition: transform 0.5s ease-in-out;
+    /* Smooth zoom effect */
 }
 
 .before:hover img,
 .after:hover img {
-    transform: scale(1.05); /* Slight zoom in on hover */
-}
-
-/* Caption Styling */
-.before p,
-.after p {
-    font-weight: bold;
-    font-size: 16px;
-    color: #333;
-    margin-top: 10px;
+    transform: scale(1.05);
+    /* Slight zoom in on hover */
 }
 
 /* Slideshow Animation */
 @keyframes slide {
-    0%, 20%, 100% {
+
+    0%,
+    20%,
+    100% {
         opacity: 0;
     }
-    25%, 95% {
+
+    25%,
+    95% {
         opacity: 1;
     }
 }
@@ -886,10 +890,11 @@ footer p {
     }
 
     #home .text-content h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
         /* Reduce size for small screens */
         line-height: 1.2;
-        margin: 0 0 10px;
+        margin: 0;
+        padding: 0 15px;
         word-break: break-word;
     }
 
@@ -903,6 +908,7 @@ footer p {
         font-size: 1.5rem;
         /* Smaller font size */
         margin-top: 8px;
+        word-break: break-word;
     }
 
     #home .photo-container {
@@ -919,6 +925,26 @@ footer p {
         max-width: 250px;
         /* Limit image width */
         height: auto;
+    }
+
+    #home::before {
+        content: "";
+        /* Required for pseudo-elements */
+        position: absolute;
+        /* Position behind the content */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('./photos/smile_br_mob.jpg');
+        background-color: rgba(255, 255, 255, 0.4);
+        background-size: cover;
+        background-position: center;
+        opacity: 0.15;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        /* Send it to the back */
     }
 
     .neon-circle {
@@ -1011,26 +1037,36 @@ footer p {
         font-weight: bold;
         font-size: 1rem;
     }
+
     #about {
-        padding: 15px 10px; /* Reduce padding for smaller screens */
+        padding: 0px 20px;
+        /* Reduce padding for smaller screens */
     }
 
     #about .about-content {
-        padding: 5px 5px; /* Reduce padding inside the content */
-        max-width: 100%; /* Make sure content takes full width */
+        padding: 10px 10px;
+        /* Reduce padding inside the content */
+        max-width: 100%;
+        /* Make sure content takes full width */
     }
 
     #about h2 {
-        font-size: 1.2rem; /* Smaller font size for better mobile fit */
+        font-size: 2rem;
+        /* Smaller font size for better mobile fit */
     }
 
     #about h3 {
-        font-size: 1rem; /* Adjust font size for subheadings */
+        font-size: 1.3rem;
+        /* Adjust font size for subheadings */
     }
 
     #about p {
-        font-size: 0.8rem; /* Smaller text size for better fitting */
+        font-size: 1rem;
+        margin-bottom: 20px;
+        line-height: 1.8;
+       
     }
+
     .services-section {
         display: flex;
         flex-direction: column;
@@ -1060,19 +1096,22 @@ footer p {
     }
 
     .service-content h2 {
-        font-size: 1.2rem; /* Smaller heading size for compact display */
+        font-size: 1.2rem;
+        /* Smaller heading size for compact display */
         margin-bottom: 5px;
         text-align: left;
         color: #2c3e50;
     }
 
     .service-content p {
-        font-size: 0.95rem; /* Smaller paragraph size */
+        font-size: 0.95rem;
+        /* Smaller paragraph size */
         line-height: 1.4;
         text-align: left;
         margin: 0;
         color: #444;
     }
+
     .gallery-slide {
         flex-direction: column;
         justify-content: center;
@@ -1081,18 +1120,24 @@ footer p {
 
     .before,
     .after {
-        width: 400px; /* Set a fixed width to keep the box size consistent */
-        max-width: 90%; /* Prevent it from exceeding the viewport width */
-        height: 220px; /* Set a fixed height as well for consistency */
-        margin-bottom: 20px; /* Space between the two boxes */
-        box-sizing: border-box; /* Ensures padding and border are included in the width and height */
+        width: 100%;
+        /* Set a fixed width to keep the box size consistent */
+        
+        /* Prevent it from exceeding the viewport width */
+        height: 200px;
+        /* Set a fixed height as well for consistency */
+        margin-bottom: 20px;
+        /* Space between the two boxes */
+        box-sizing: border-box;
+        /* Ensures padding and border are included in the width and height */
     }
 
     .before img,
     .after img {
         width: 100%;
         height: 100%;
-        object-fit: cover; /* Make sure the image fills the container without distortion */
+        object-fit: cover;
+        /* Make sure the image fills the container without distortion */
         border-radius: 10px;
     }
 
@@ -1104,8 +1149,10 @@ footer p {
     }
 
     .contact-info ul li {
-        margin: 0 0; /* Vertical spacing for each item */
-        width: 100%; /* Take full width on mobile */
+        margin: 0 0;
+        /* Vertical spacing for each item */
+        width: 100%;
+        /* Take full width on mobile */
     }
 
     .appointment-title {
@@ -1120,11 +1167,15 @@ footer p {
     #contact h2 {
         font-size: 28px;
     }
+
     .logo {
-        display: block; /* Show on small screens */
+        display: block;
+        /* Show on small screens */
     }
+
     header {
-        justify-content: space-between; /* Align hamburger and logo to the left, nav to the right */
+        justify-content: space-between;
+        /* Align hamburger and logo to the left, nav to the right */
     }
 }
 
@@ -1145,7 +1196,7 @@ footer p {
     .service-content p {
         font-size: 1.1rem;
     }
-    
+
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -1162,9 +1213,12 @@ footer p {
         justify-content: center;
         gap: 0px;
     }
+
     .contact-info ul li {
-        margin: 0 0; /* Vertical spacing for each item */
-        width: 100%; /* Take full width on mobile */
+        margin: 0 0;
+        /* Vertical spacing for each item */
+        width: 100%;
+        /* Take full width on mobile */
     }
 
     .appointment-title {
